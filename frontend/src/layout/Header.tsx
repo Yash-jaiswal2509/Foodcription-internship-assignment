@@ -26,35 +26,59 @@ const Header = () => {
         <Link
           to={"/"}
           onClick={() => setMenu("home")}
-          className={menu === "home" ? "underline underline-offset-4 font-medium text-gray-800" : "font-medium text-gray-800/70"}
+          className={
+            menu === "home"
+              ? "underline underline-offset-4 font-medium text-gray-800"
+              : "font-medium text-gray-800/70"
+          }
         >
           Home
         </Link>
+
         <a
           href="#features"
           onClick={() => setMenu("features")}
-          className={menu === "features" ? "underline underline-offset-4 font-medium text-gray-800" : "font-medium text-gray-800/70"}
+          className={
+            menu === "features"
+              ? "underline underline-offset-4 font-medium text-gray-800"
+              : "font-medium text-gray-800/70"
+          }
         >
           Features
         </a>
+
         <a
-          href="#candidates"
-          onClick={() => setMenu("candidates")}
-          className={menu === "candidates" ? "underline underline-offset-4 font-medium text-gray-800" : "font-medium text-gray-800/70"}
+          href="#pricing"
+          onClick={() => setMenu("pricing")}
+          className={
+            menu === "pricing"
+              ? "underline underline-offset-4 font-medium text-gray-800"
+              : "font-medium text-gray-800/70"
+          }
         >
-          Candidates
+          Pricing
         </a>
+
         <a
-          href="#about-us"
-          onClick={() => setMenu("about")}
-          className={menu === "about" ? "underline underline-offset-4 font-medium text-gray-800" : "font-medium text-gray-800/70"}
+          href="#testimonials"
+          onClick={() => setMenu("testimonials")}
+          className={
+            menu === "testimonials"
+              ? "underline underline-offset-4 font-medium text-gray-800"
+              : "font-medium text-gray-800/70"
+          }
         >
-          About
+          Testimonials
         </a>
+
         <a
-          href="#footer"
+          href="#contact"
           onClick={() => setMenu("contact")}
-          className={menu === "contact" ? "underline underline-offset-4 font-medium text-gray-800" : "font-medium text-gray-800/70"}
+          className={
+            menu === "contact"
+              ? "underline underline-offset-4 font-medium text-gray-800"
+              : "font-medium text-gray-800/70"
+          }
         >
           Contact
         </a>

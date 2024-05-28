@@ -1,7 +1,9 @@
 import Hero from "../components/Hero";
-import About from "../components/About";
+import Pricing from "../components/Pricing";
 import Features from "../components/Features";
 import ComapniesTrusted from "../components/ComapniesTrusted";
+import Testimonials from "../components/Testimonials";
+import Contact from "../components/Contact";
 
 const HomePage = () => {
   return (
@@ -9,7 +11,9 @@ const HomePage = () => {
       <Hero />
       <ComapniesTrusted />
       <Features />
-      <About />
+      <Pricing />
+      <Testimonials />
+      <Contact />
     </div>
   );
 };

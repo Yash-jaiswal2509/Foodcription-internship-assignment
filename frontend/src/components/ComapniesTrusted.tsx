@@ -2,7 +2,7 @@ const ComapniesTrusted = () => {
   return (
     <div className="mt-12">
       <p className="text-center text-xl text-gray-600/70 font-semibold">Trusted By 25000+ Comapnies Around The World</p>
-      <div className="mx-20 flex justify-between mt-8 opacity-100">
+      <div className="mx-20 flex justify-between mt-8 opacity-90">
         <span className="flex items-center gap-1">
           <img src="src\assets\icons8-meta.svg" className="h-[40px] " alt="meta" />
           <p className="text-2xl font-bold text-gray-600/90">Meta</p>
