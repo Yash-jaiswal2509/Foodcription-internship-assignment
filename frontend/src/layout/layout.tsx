@@ -4,11 +4,11 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <>
+    <div className=" scroll-smooth">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
