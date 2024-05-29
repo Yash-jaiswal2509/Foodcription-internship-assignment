@@ -12,7 +12,7 @@ const Contact = () => {
         <span className="w-40 h-[2px] bg-gradient-to-r from-black/70 to-white rounded-full"></span>
       </div>
 
-      <div className="bg-[url('src/assets/wavy-black-white-background.jpg')] p-32 w-full flex flex-col mt-10">
+      <div className="bg-[url('assets/wavy-black-white-background.jpg')] p-32 w-full flex flex-col mt-10">
         <h1 className="text-white text-center text-5xl font-bold">
           Ready To Change Your
           <br  /> Hiring Experience?

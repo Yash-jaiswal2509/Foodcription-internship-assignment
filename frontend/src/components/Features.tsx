@@ -32,7 +32,7 @@ const Features = () => {
 
         <div className="p-8 flex flex-col items-center">
           <img
-            src="src/assets/icons8-interview.png"
+            src="assets/icons8-interview.png"
             alt=""
             className="h-[30px] hover:scale-110"
           />
@@ -56,7 +56,7 @@ const Features = () => {
 
         <div className="p-8 flex flex-col items-center border-t-2 border-r-2">
           <img
-            src="src/assets/icons8-permanent-job.png"
+            src="assets/icons8-permanent-job.png"
             alt="permanent-job"
             className="h-[30px] hover:scale-110"
           />
@@ -80,7 +80,7 @@ const Features = () => {
 
         <div className="p-8 flex flex-col items-center border-t-2 border-l-2">
           <img
-            src="src/assets/icons8-collaboration.png"
+            src="assets/icons8-collaboration.png"
             alt=""
             className="h-[30px] hover:scale-110"
           />

@@ -44,7 +44,7 @@ const Register = () => {
 
   return (
     <div className="px-6 flex mx-auto 2xl:max-w-screen-xl">
-      <img src="src/assets/Banner.png" className="w-[50%] h-full my-auto" alt="Banner" />
+      <img src="assets/Banner.png" className="w-[50%] h-full my-auto" alt="Banner" />
       <form
         className="flex flex-col p-10 w-full rounded-lg"
         onSubmit={onSubmit}

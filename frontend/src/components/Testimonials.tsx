@@ -25,7 +25,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/man1.jpg"
+              src="assets/man1.jpg"
               alt="man-1"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />
@@ -44,7 +44,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/woman1.jpg"
+              src="assets/woman1.jpg"
               alt="womman-1"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />
@@ -65,7 +65,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/man2.jpg"
+              src="assets/man2.jpg"
               alt="man-2"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />
@@ -84,7 +84,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/woman2.jpg"
+              src="assets/woman2.jpg"
               alt="woman-2"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />
@@ -105,7 +105,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/man3.jpg"
+              src="assets/man3.jpg"
               alt="man-3"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />
@@ -126,7 +126,7 @@ const Testimonials = () => {
         <div className="border p-8 flex flex-col w-[380px] rounded-lg drop-shadow-md">
           <div className="flex gap-4 items-center">
             <img
-              src="src/assets/woman3.jpg"
+              src="assets/woman3.jpg"
               alt="woman-3"
               className="h-20 w-20 rounded-full border-2 border-white drop-shadow-xl"
             />

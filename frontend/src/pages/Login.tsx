@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div className="px-6 flex mx-auto h-screen 2xl:max-w-screen-xl">
       <img
-        src="src/assets/Banner.png"
+        src="assets/Banner.png"
         className="w-[50%] my-auto"
         alt="Banner"
       />
