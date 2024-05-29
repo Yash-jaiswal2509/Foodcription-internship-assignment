@@ -4,16 +4,16 @@ const ComapniesTrusted = () => {
       <p className="text-center text-xl text-gray-600/70 font-semibold">Trusted By 25000+ Comapnies Around The World</p>
       <div className="mx-20 flex justify-between mt-8 opacity-90">
         <span className="flex items-center gap-1">
-          <img src="src\assets\icons8-meta.svg" className="h-[40px] " alt="meta" />
+          <img src="assets/icons8-meta.svg" className="h-[40px] " alt="meta" />
           <p className="text-2xl font-bold text-gray-600/90">Meta</p>
         </span>
         <span className="flex items-center gap-1">
-          <img src="src\assets\icons8-adobe.svg" className="h-[40px] " alt="adobe" />
+          <img src="assets/icons8-adobe.svg" className="h-[40px] " alt="adobe" />
           <p className="text-2xl font-bold text-gray-600/90">Adobe</p>
         </span>
         <span className="flex items-center gap-1">
           <img
-            src="src\assets\icons8-netapp.svg"
+            src="assets/icons8-netapp.svg"
             className="h-[40px] "
             alt="netapp"
           />
@@ -21,7 +21,7 @@ const ComapniesTrusted = () => {
         </span>
         <span className="flex items-center gap-1">
           <img
-            src="src\assets\icons8-netflix.svg"
+            src="assets/icons8-netflix.svg"
             className="h-[40px]"
             alt="netflix"
           />
@@ -29,7 +29,7 @@ const ComapniesTrusted = () => {
         </span>
         <span className="flex items-center gap-1">
           <img
-            src="src\assets\icons8-google.svg"
+            src="assets/icons8-google.svg"
             className="h-[40px] "
             alt="google"
           />
@@ -37,7 +37,7 @@ const ComapniesTrusted = () => {
         </span>
         <span className="flex items-center gap-1">
           <img
-            src="src\assets\icons8-microsoft.svg"
+            src="assets/icons8-microsoft.svg"
             className="h-[40px] "
             alt="microsoft"
           />
