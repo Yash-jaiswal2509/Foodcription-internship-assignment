@@ -18,7 +18,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const { setIsLoggedIn, setAuth } = useAuth();
+  const { setToken, setUser } = useAuth();
 
   const {
     register,
@@ -36,93 +36,95 @@ const Login = () => {
 
   useEffect(() => {
     if (mutation.data?.data.success) {
-      setIsLoggedIn(true);
-      setAuth(mutation.data?.data.data);
-      console.log(mutation.data?.data.data);
+      setToken(mutation.data?.data.data.accessToken);
+      localStorage.setItem("token", mutation.data?.data.data.accessToken);
+      setUser(mutation.data?.data.data.user);
+      console.log(mutation.data?.data.data.user);
+      localStorage.setItem(
+        "user",
+        JSON.stringify(mutation.data?.data.data.user)
+      );
       navigate(from, { replace: true });
       toast.message("Successfully Logged In", { closeButton: true });
     }
   }, [mutation.isSuccess]);
 
   return (
-    <div className="2xl:h-[760px] h-screen bg-gray-400/10 mx-auto 2xl:max-w-screen-2xl">
-      <div className="h-full relative w-full flex flex-col justify-center overflow-hidden rounded-xl">
-        <div className="w-full absolute inset-0 h-full"></div>
-        <div className="z-20 relative px-4 sm:px-20 md:px-40 py-10 flex flex-col">
-          <div className=" flex flex-row">
-            <div className=" w-full font-mono">
-              <div className="rounded-[22px] flex flex-col gap-4 items-center px-4 sm:px-12 py-8 bg-white dark:bg-zinc-900">
-                <Link to="/">
-                  <LogOutIcon size={30} className="mb-5" />
-                </Link>
-                <h1 className="text-4xl font-bold">Login</h1>
-                <p className="text-xs sm:text-lg font-semibold">
-                  Login to explore the projects...
-                </p>
-                <form
-                  className="flex-col flex gap-5 w-full"
-                  onSubmit={onSubmit}
-                >
-                  <label className="flex flex-col gap-1">
-                    <span className=" text-lg font-bold">
-                      Email<span className=" text-red-600">*</span>
-                    </span>
-                    <input
-                      type="email"
-                      placeholder="example123@gmail.com"
-                      className=" outline-0 border-2 rounded-md p-2 dark:bg-black"
-                      {...register("email", {
-                        required: "Email field is empty",
-                      })}
-                    />
-                    {errors.email && (
-                      <span className="text-red-600 text-base">
-                        {errors.email.message}
-                      </span>
-                    )}
-                  </label>
-                  <label className="flex flex-col gap-1">
-                    <span className=" text-lg font-bold">
-                      Password<span className=" text-red-600">*</span>
-                    </span>
-                    <input
-                      type="password"
-                      placeholder="Enter your Password here"
-                      className=" outline-0 border-2 rounded-md p-2 dark:bg-black"
-                      {...register("password", {
-                        required: "Password field is empty",
-                      })}
-                    />
-                    <span className=" w-full text-right underline text-cyan-700 hover:text-cyan-800 pr-2 cursor-pointer">
-                      Forgot password?
-                    </span>
-                    {errors.password && (
-                      <span className="text-red-600 text-base">
-                        {errors.password.message}
-                      </span>
-                    )}
-                  </label>
-                  <Button
-                    type="submit"
-                    className=" text-xl dark:bg-black/50 dark:hover:bg-black dark:text-white"
-                    disabled={mutation.isPending}
-                  >
-                    {mutation.isPending ? "Loggin In..." : "Log in"}
-                  </Button>
-                </form>
-                <span className=" text-sm flex flex-col items-center  sm:flex-row sm:gap-2">
-                  Don't have an account?
-                  <Link to="/register">
-                    <span className=" text-cyan-700 hover:text-cyan-800 underline cursor-pointer">
-                      Create Account
-                    </span>
-                  </Link>
-                </span>
-              </div>
-            </div>
-          </div>
+    <div className="px-6 flex mx-auto h-screen 2xl:max-w-screen-xl">
+      <img
+        src="src/assets/Banner.png"
+        className="w-[50%] my-auto"
+        alt="Banner"
+      />
+      <form
+        className="flex flex-col my-auto p-10 w-full rounded-lg"
+        onSubmit={onSubmit}
+      >
+        <div className="flex justify-center items-end gap-5">
+          <h1 className="text-3xl font-bold">Login</h1>
+          <Link to="/">
+            <LogOutIcon size={30} className="mb-1" />
+          </Link>
         </div>
-      </div>
+        <div className="flex-col w-full flex gap-2 lg:gap-5 ">
+          <label className="flex flex-col gap-1">
+            <span className=" text-lg font-bold">
+              Email<span className=" text-red-600">*</span>
+            </span>
+            <input
+              type="email"
+              placeholder="example123@gmail.com"
+              className=" outline-0 border-2 rounded-md p-2 dark:bg-black"
+              {...register("email", {
+                required: "Email field is empty",
+              })}
+            />
+            {errors.email && (
+              <span className="text-red-600 text-base">
+                {errors.email.message}
+              </span>
+            )}
+          </label>
+
+          <label className="flex flex-col gap-1">
+            <span className=" text-lg font-bold">
+              Password<span className=" text-red-600">*</span>
+            </span>
+            <input
+              type="password"
+              placeholder="Enter your Password here"
+              className=" outline-0 border-2 rounded-md p-2 dark:bg-black"
+              {...register("password", {
+                required: "Password field is empty",
+              })}
+            />
+            <span className=" w-full text-right underline text-cyan-700 hover:text-cyan-800 pr-2 cursor-pointer">
+              Forgot password?
+            </span>
+            {errors.password && (
+              <span className="text-red-600 text-base">
+                {errors.password.message}
+              </span>
+            )}
+          </label>
+
+          <Button
+            type="submit"
+            className="text-xl"
+            disabled={mutation.isPending}
+          >
+            {mutation.isPending ? "Loggin In..." : "Log in"}
+          </Button>
+          <span className="text-center">
+            Don't have an account?
+            <Link to="/register">
+              <span className="ml-2 text-cyan-700 hover:text-cyan-800 underline cursor-pointer">
+                Create Account
+              </span>
+            </Link>
+          </span>
+        </div>
+      </form>
     </div>
   );
 };

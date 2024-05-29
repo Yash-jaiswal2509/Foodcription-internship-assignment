@@ -1,38 +1,40 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 type AuthContextProps = {
-  isLoggedIn: boolean;
-  setIsLoggedIn: (isLoggedIn: boolean) => void;
-  auth: any;
-  setAuth: (auth: any) => void;
+  token: string | null;
+  setToken: (token: string) => void;
+  user: any;
+  setUser: (user: any) => void;
 };
 
 const initialState: AuthContextProps = {
-  isLoggedIn: false,
-  setIsLoggedIn: () => {},
-  auth: null,
-  setAuth: () => {},
+  token: null,
+  setToken: () => {},
+  user: null,
+  setUser: () => {},
 };
-
-//these are all the initialState which also matches the useState variables, so don't get confused
 
 const AuthContext = createContext<AuthContextProps>(initialState);
 
-//wrapper for the AuthContext
-export default function AuthProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [auth, setAuth] = useState<any>({});
+export default function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<any>(null);
 
   const contextValue: AuthContextProps = {
-    isLoggedIn,
-    setIsLoggedIn: (value: boolean) => setIsLoggedIn(value),
-    auth,
-    setAuth: (value: any) => setAuth(value),
+    token,
+    setToken: (value: string) => setToken(value),
+    user,
+    setUser: (value: any) => setUser(value),
   };
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+    if (storedToken && storedUser) {
+      setToken(storedToken);
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>

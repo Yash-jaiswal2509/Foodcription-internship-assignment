@@ -43,8 +43,8 @@ const Register = () => {
   }, [mutation.isSuccess]);
 
   return (
-    <div className="p-6 flex mx-auto 2xl:max-w-screen-xl">
-      <img src="src/assets/Banner.png" className="w-[50%]" alt="Banner" />
+    <div className="px-6 flex mx-auto 2xl:max-w-screen-xl">
+      <img src="src/assets/Banner.png" className="w-[50%] h-full my-auto" alt="Banner" />
       <form
         className="flex flex-col p-10 w-full rounded-lg"
         onSubmit={onSubmit}
@@ -92,7 +92,7 @@ const Register = () => {
             </div>
             <input
               type="text"
-              placeholder="Enter your Company Name"
+              placeholder="Enter your Company Name or N/A"
               className=" outline-0 border-2 rounded-md px-2 py-1.5 text-xs lg:text-base"
               {...register("companyName", {
                 required: "This field is required",
@@ -206,7 +206,7 @@ const Register = () => {
 
           <Button
             type="submit"
-            className=" text-lg md:text-xl/50 dark:hover:bg-black dark:text-white  "
+            className=" text-lg md:text-xl/50"
             disabled={mutation.isPending}
           >
             {mutation.isPending ? "Registering..." : "Register"}
