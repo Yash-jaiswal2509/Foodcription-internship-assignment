@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className=" scroll-smooth">
+    <div className="relative">
       <Header />
       <Outlet />
       <Footer />
