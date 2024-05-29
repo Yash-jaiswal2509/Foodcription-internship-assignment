@@ -7,7 +7,7 @@ export interface UserDocument extends Document {
     password: string;
     phone: string;
     coverImage: string;
-    roles: string[];
+    role: string[];
     isPasswordCorrect(password: string): Promise<boolean>;
     generateAccessToken(): Promise<string>;
   }

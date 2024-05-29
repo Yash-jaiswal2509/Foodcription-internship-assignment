@@ -13,10 +13,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           {/* Public Routes */}
           <Route path="/" element={<HomePage />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
           <Route path="candidates" element={<Candidates />} />
         </Route>
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

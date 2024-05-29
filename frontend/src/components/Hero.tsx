@@ -6,7 +6,7 @@ import { Input } from "./ui/input";
 const Hero = () => {
   const words = ["Hiring", "Recruiting", "Employing", "Appointing"];
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col w-full items-center bg-[url('src/assets/Banner.svg')] bg-cover bg-center bg-no-repeat">
       <div className="mt-10 flex items-center gap-5">
         <span className="w-40 h-[2px] bg-gradient-to-r from-white to-black/70 rounded-full"></span>
         <p className="border px-8 py-2 rounded-full drop-shadow-md font-bold uppercase">
@@ -23,7 +23,7 @@ const Hero = () => {
         <br /> Empowering HR professionals with a seamless recruitment
         experience.
       </p>
-      <div className="mt-10 flex items-center gap-3 w-[40%]">
+      <div className="mt-10 flex items-center gap-3 w-[40%] mb-[500px]">
         <Input type="email" placeholder="Enter your email" />
         <Button type="submit" className="flex items-center gap-2">
           Schedule a demo <ArrowRightIcon size={20} />

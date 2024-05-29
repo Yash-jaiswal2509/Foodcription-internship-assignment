@@ -23,6 +23,6 @@ app.get("/health", async (req: Request, res: Response) => {
   res.send({ message: "Health ok!" });
 });
 
-app.use("/api/v1/user", userRoute);
+app.use("/api/v1/users", userRoute);
 
 export { app };

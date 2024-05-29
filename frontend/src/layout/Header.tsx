@@ -8,7 +8,7 @@ const Header = () => {
   const [menu, setMenu] = useState("home");
 
   return (
-    <header className="p-1 flex items-center justify-between border-b-[1px] bg-background sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="p-1 flex items-center justify-between border-b-[1px] bg-background">
       <div className=" sm:px-2 flex items-center cursor-pointer">
         <Link to="/">
           <img

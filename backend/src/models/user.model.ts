@@ -8,18 +8,22 @@ interface UserModel extends Model<UserDocument> {}
 const userSchema = new mongoose.Schema<UserDocument, UserModel>(
   {
     fullName: { type: String, required: true },
-    companyName: { type: String, required: true },
+    companyName: { type: String },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: [true, "Password is required"] },
     phone: { type: String, required: true, unique: true },
-    coverImage: [{ type: String }],
-    roles: {
+    coverImage: {
+      type: String,
+      default:
+        "https://res.cloudinary.com/dxtkqfjot/image/upload/v1716963028/samples/feuuviznkmwpwiog8z08.png",
+    },
+    role: {
       type: [
         {
           type: String,
           enum: ["candidate", "company"],
         },
-      ]
+      ],
     },
   },
   {
@@ -47,11 +51,9 @@ userSchema.methods.generateAccessToken = async function (): Promise<string> {
       _id: this._id,
       email: this.email,
       password: this.password,
-      companyName: this.companyName,
-      roles: this.roles,
+      role: this.role,
     },
     process.env.ACCESS_TOKEN_SECRET as string,
-
     {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
     }

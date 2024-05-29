@@ -1,18 +1,17 @@
 import { asyncHandler } from "../utils/asyncHandler";
 import { apiResponse } from "../utils/apiResponse";
 import { apiError } from "../utils/apiError";
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { User } from "../models/user.model";
 import { UserDocument } from "../types/types";
 import { body, validationResult } from "express-validator";
 
 const validateUserRegistration = [
   body("fullName").notEmpty().withMessage("Full name is required"),
-  body("companyName").notEmpty().withMessage("Company name is required"),
   body("email").isEmail().withMessage("Valid email is required"),
   body("password").notEmpty().withMessage("Password is required"),
   body("phone").notEmpty().withMessage("Phone number is required"),
-  (req: Request, res: Response, next: Function) => {
+  (req: Request, res: Response, next: NextFunction) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -39,7 +38,7 @@ const generateToken = async (userId: string) => {
 };
 
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
-  const { fullName, companyName, email, password, phone, roles } = req.body;
+  const { fullName, companyName, email, password, phone, role } = req.body;
   console.log(req.body);
 
   if (
@@ -65,7 +64,7 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     email,
     password,
     phone,
-    roles,
+    role,
   });
 
   const createdUser = await User.findById(user._id).select("-password");
