@@ -16,7 +16,7 @@ export type LoginFormData = {
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/dashboard";
 
   const { setToken, setUser } = useAuth();
 
@@ -50,14 +50,11 @@ const Login = () => {
   }, [mutation.isSuccess]);
 
   return (
-    <div className="px-6 flex mx-auto h-screen 2xl:max-w-screen-xl">
-      <img
-        src="assets/Banner.png"
-        className="w-[50%] my-auto"
-        alt="Banner"
-      />
+    <div className="flex w-screen h-full justify-center items-center mx-auto 2xl:max-w-screen-xl relative">
+      <img src="assets/Banner.png" className="w-full h-screen 2xl:h-full" alt="Banner" />
+      <div className="absolute z-10 size-full bg-black/50 backdrop-blur-sm"></div>
       <form
-        className="flex flex-col my-auto p-10 w-full rounded-lg"
+        className="flex flex-col my-auto w-[50%] p-10 rounded-lg absolute z-20 bg-white"
         onSubmit={onSubmit}
       >
         <div className="flex justify-center items-end gap-5">

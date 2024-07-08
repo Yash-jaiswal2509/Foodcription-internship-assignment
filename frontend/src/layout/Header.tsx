@@ -34,65 +34,71 @@ const Header = () => {
         </Link>
       </div>
       <ul className="flex gap-5">
-        <Link
-          to={"/"}
-          onClick={() => setMenu("home")}
-          className={
-            menu === "home"
-              ? "underline underline-offset-4 font-medium text-gray-800"
-              : "font-medium text-gray-800/70"
-          }
-        >
-          Home
-        </Link>
+        {token ? (
+          <></>
+        ) : (
+          <>
+            <a
+              href="#home"
+              onClick={() => setMenu("home")}
+              className={
+                menu === "home"
+                  ? "underline underline-offset-4 font-medium text-gray-800"
+                  : "font-medium text-gray-800/70"
+              }
+            >
+              Home
+            </a>
 
-        <a
-          href="#features"
-          onClick={() => setMenu("features")}
-          className={
-            menu === "features"
-              ? "underline underline-offset-4 font-medium text-gray-800"
-              : "font-medium text-gray-800/70"
-          }
-        >
-          Features
-        </a>
+            <a
+              href="#features"
+              onClick={() => setMenu("features")}
+              className={
+                menu === "features"
+                  ? "underline underline-offset-4 font-medium text-gray-800"
+                  : "font-medium text-gray-800/70"
+              }
+            >
+              Features
+            </a>
 
-        <a
-          href="#pricing"
-          onClick={() => setMenu("pricing")}
-          className={
-            menu === "pricing"
-              ? "underline underline-offset-4 font-medium text-gray-800"
-              : "font-medium text-gray-800/70"
-          }
-        >
-          Pricing
-        </a>
+            <a
+              href="#pricing"
+              onClick={() => setMenu("pricing")}
+              className={
+                menu === "pricing"
+                  ? "underline underline-offset-4 font-medium text-gray-800"
+                  : "font-medium text-gray-800/70"
+              }
+            >
+              Pricing
+            </a>
 
-        <a
-          href="#testimonials"
-          onClick={() => setMenu("testimonials")}
-          className={
-            menu === "testimonials"
-              ? "underline underline-offset-4 font-medium text-gray-800"
-              : "font-medium text-gray-800/70"
-          }
-        >
-          Testimonials
-        </a>
+            <a
+              href="#testimonials"
+              onClick={() => setMenu("testimonials")}
+              className={
+                menu === "testimonials"
+                  ? "underline underline-offset-4 font-medium text-gray-800"
+                  : "font-medium text-gray-800/70"
+              }
+            >
+              Testimonials
+            </a>
 
-        <a
-          href="#contact"
-          onClick={() => setMenu("contact")}
-          className={
-            menu === "contact"
-              ? "underline underline-offset-4 font-medium text-gray-800"
-              : "font-medium text-gray-800/70"
-          }
-        >
-          Contact
-        </a>
+            <a
+              href="#contact"
+              onClick={() => setMenu("contact")}
+              className={
+                menu === "contact"
+                  ? "underline underline-offset-4 font-medium text-gray-800"
+                  : "font-medium text-gray-800/70"
+              }
+            >
+              Contact
+            </a>
+          </>
+        )}
       </ul>
       <div className="flex hover:opacity-95 items-center">
         <div>{/* <MenuButton /> */}</div>
