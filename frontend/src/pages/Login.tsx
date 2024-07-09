@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { LogOutIcon } from "lucide-react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
@@ -15,8 +15,6 @@ export type LoginFormData = {
 
 const Login = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/dashboard";
 
   const { setToken, setUser } = useAuth();
 
@@ -44,14 +42,18 @@ const Login = () => {
         "user",
         JSON.stringify(mutation.data?.data.data.user)
       );
-      navigate(from, { replace: true });
+      navigate("/admin", { replace: true });
       toast.message("Successfully Logged In", { closeButton: true });
     }
   }, [mutation.isSuccess]);
 
   return (
     <div className="flex w-screen h-full justify-center items-center mx-auto 2xl:max-w-screen-xl relative">
-      <img src="assets/Banner.png" className="w-full h-screen 2xl:h-full" alt="Banner" />
+      <img
+        src="assets/Banner.png"
+        className="w-full h-screen 2xl:h-full"
+        alt="Banner"
+      />
       <div className="absolute z-10 size-full bg-black/50 backdrop-blur-sm"></div>
       <form
         className="flex flex-col my-auto w-[50%] p-10 rounded-lg absolute z-20 bg-white"

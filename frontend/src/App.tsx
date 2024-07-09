@@ -4,10 +4,11 @@ import Layout from "./layout/layout";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Candidates from "./pages/Candidates";
+import Candidates from "./admin/Candidates";
 import ProtectedRoute from "./lib/Protected-Route";
 import AuthProvider from "./providers/AuthProvider";
 import Dashboard from "./admin/dashboard";
+import AdminLayout from "./layout/adminLayout";
 
 function App() {
   return (
@@ -17,13 +18,16 @@ function App() {
           <Route path="/" element={<Layout />}>
             {/* Public Routes */}
             <Route path="/" element={<HomePage />} />
+          </Route>
+
+          {/* Admin layout -> private routes */}
+          <Route path="/" element={<AdminLayout />}>
             <Route
-              path="/"
+              path="/admin"
               element={<ProtectedRoute allowedRoles={["company"]} />}
             >
               <Route path="candidates" element={<Candidates />} />
               <Route path="dashboard" element={<Dashboard />} />
-
             </Route>
           </Route>
           <Route path="register" element={<Register />} />
